@@ -1,0 +1,67 @@
+{
+  "ignition": {
+    "version": "3.4.0"
+  },
+  "passwd": {
+    "users": [
+      {
+        "name": "core",
+        "sshAuthorizedKeys": [
+          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCe/EUbSOsUQaVaLFo33cqNsG6bMEeaBUyuRpii8oEc9Yi3lcl22F5vE9hOX3eXgN9lF4ngWJMooEX96cz4XpeNvk970GGR18hzwO8XMOg/yybrchcTZ6liO/ww5rzayjLbhBV7tt4hXkFa8PTRcNf+2V2fN7ptatz1wMQAs8uA6SRnhC3ND6F4zwvx+VjVhKjuDKn7zSFhbssz+8dfCEbvnNaS6m+2cd1y7CQ//89dRMYP/EZvZgnMVJCwxcaDtwyToZHeZYL8ouc2+yV40wGDrDSnj2w7roqustb+WCK2xvqv/U9reAEFAnjNwU2FIDvtSVGsUo25u/DJyjPUQ6I7et0CrqbsE/Umy3Hogm8cBEaR+nNignQMkB1zHvq66VVrd+V3GcbcGIH7gSw9EllLpuLQ2ZN9qdRSqlnSS3zbsLNSC1NPZpzJviDZPfec3E0+FtsEc+KJLWtvOstpaCWziw+lTYDlZrDnmGAA3NAQ4mYpc1XMT5pKloYkD8hts/8= nevlik@mercury"
+        ]
+      }
+    ]
+  },
+  "storage": {
+    "disks": [
+      {
+        "device": "/dev/disk/by-id/coreos-boot-disk",
+        "partitions": [
+          {
+            "label": "boot",
+            "number": 1,
+            "sizeMiB": 256,
+            "startMiB": 0,
+            "typeGuid": "BC13C2FF-59E6-4262-A352-B275FD6F7172"
+          },
+          {
+            "label": "root",
+            "number": 2,
+            "sizeMiB": 0
+          }
+        ],
+        "wipeTable": true
+      }
+    ],
+    "files": [
+      {
+        "path": "/etc/zincati/config.d/51-rollout-wariness.toml",
+        "contents": {
+          "compression": "",
+          "source": "data:,%5Bidentity%5D%0Arollout_wariness%20%3D%200.001%0A"
+        }
+      },
+      {
+        "path": "/etc/zincati/config.d/55-updates-strategy.toml",
+        "contents": {
+          "compression": "",
+          "source": "data:;base64,W3VwZGF0ZXNdCnN0cmF0ZWd5ID0gInBlcmlvZGljIgpbW3VwZGF0ZXMucGVyaW9kaWMud2luZG93XV0KZGF5cyA9IFsgIlNhdCIsICJTdW4iIF0Kc3RhcnRfdGltZSA9ICIyMjozMCIKbGVuZ3RoX21pbnV0ZXMgPSA2MAo="
+        }
+      }
+    ],
+    "filesystems": [
+      {
+        "device": "/dev/disk/by-partlabel/boot",
+        "format": "ext4",
+        "label": "boot",
+        "path": "/boot"
+      },
+      {
+        "device": "/dev/disk/by-partlabel/root",
+        "format": "ext4",
+        "label": "root",
+        "path": "/"
+      }
+    ]
+  }
+}
