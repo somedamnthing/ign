@@ -1,4 +1,6 @@
 # butane --pretty --strict config.bu > config.ign
+# https://raw.githubusercontent.com/somedamnthing/ign/main/config.ign
+# https://tinyurl.com/someign
 variant: fcos
 version: 1.5.0
 passwd:
@@ -6,40 +8,40 @@ passwd:
   - name: core
     ssh_authorized_keys:
     - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCe/EUbSOsUQaVaLFo33cqNsG6bMEeaBUyuRpii8oEc9Yi3lcl22F5vE9hOX3eXgN9lF4ngWJMooEX96cz4XpeNvk970GGR18hzwO8XMOg/yybrchcTZ6liO/ww5rzayjLbhBV7tt4hXkFa8PTRcNf+2V2fN7ptatz1wMQAs8uA6SRnhC3ND6F4zwvx+VjVhKjuDKn7zSFhbssz+8dfCEbvnNaS6m+2cd1y7CQ//89dRMYP/EZvZgnMVJCwxcaDtwyToZHeZYL8ouc2+yV40wGDrDSnj2w7roqustb+WCK2xvqv/U9reAEFAnjNwU2FIDvtSVGsUo25u/DJyjPUQ6I7et0CrqbsE/Umy3Hogm8cBEaR+nNignQMkB1zHvq66VVrd+V3GcbcGIH7gSw9EllLpuLQ2ZN9qdRSqlnSS3zbsLNSC1NPZpzJviDZPfec3E0+FtsEc+KJLWtvOstpaCWziw+lTYDlZrDnmGAA3NAQ4mYpc1XMT5pKloYkD8hts/8= nevlik@mercury
-storage:
-  disks:
-    - device: /dev/disk/by-id/coreos-boot-disk
-      wipe_table: true
-      partitions:
-        - label: boot
-          number: 1
-          size_mib: 256
-          start_mib: 0
-          type_guid: BC13C2FF-59E6-4262-A352-B275FD6F7172 #type boot
-        - label: root
-          number: 2
-          size_mib: 0
-  filesystems:
-    - device: /dev/disk/by-partlabel/boot
-      format: ext4
-      label: boot
-      path: /boot
-    - device: /dev/disk/by-partlabel/root
-      format: ext4
-      label: root
-      path: /
-  files:
-  - path: /etc/zincati/config.d/51-rollout-wariness.toml
-    contents:
-      inline: |
-        [identity]
-        rollout_wariness = 0.001
-  - path: /etc/zincati/config.d/55-updates-strategy.toml
-    contents:
-      inline: |
-        [updates]
-        strategy = "periodic"
-        [[updates.periodic.window]]
-        days = [ "Sat", "Sun" ]
-        start_time = "22:30"
-        length_minutes = 60
+# storage:
+#   disks:
+#     - device: /dev/disk/by-id/coreos-boot-disk
+#       wipe_table: true
+#       partitions:
+#         - label: boot
+#           number: 1
+#           size_mib: 256
+#           start_mib: 0
+#           type_guid: BC13C2FF-59E6-4262-A352-B275FD6F7172 #type boot
+#         - label: root
+#           number: 2
+#           size_mib: 0
+#   filesystems:
+#     - device: /dev/disk/by-partlabel/boot
+#       format: ext4
+#       label: boot
+#       path: /boot
+#     - device: /dev/disk/by-partlabel/root
+#       format: ext4
+#       label: root
+#       path: /
+#   files:
+#   - path: /etc/zincati/config.d/51-rollout-wariness.toml
+#     contents:
+#       inline: |
+#         [identity]
+#         rollout_wariness = 0.001
+#   - path: /etc/zincati/config.d/55-updates-strategy.toml
+#     contents:
+#       inline: |
+#         [updates]
+#         strategy = "periodic"
+#         [[updates.periodic.window]]
+#         days = [ "Sat", "Sun" ]
+#         start_time = "22:30"
+#         length_minutes = 60

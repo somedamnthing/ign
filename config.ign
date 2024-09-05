@@ -11,57 +11,5 @@
         ]
       }
     ]
-  },
-  "storage": {
-    "disks": [
-      {
-        "device": "/dev/disk/by-id/coreos-boot-disk",
-        "partitions": [
-          {
-            "label": "boot",
-            "number": 1,
-            "sizeMiB": 256,
-            "startMiB": 0,
-            "typeGuid": "BC13C2FF-59E6-4262-A352-B275FD6F7172"
-          },
-          {
-            "label": "root",
-            "number": 2,
-            "sizeMiB": 0
-          }
-        ],
-        "wipeTable": true
-      }
-    ],
-    "files": [
-      {
-        "path": "/etc/zincati/config.d/51-rollout-wariness.toml",
-        "contents": {
-          "compression": "",
-          "source": "data:,%5Bidentity%5D%0Arollout_wariness%20%3D%200.001%0A"
-        }
-      },
-      {
-        "path": "/etc/zincati/config.d/55-updates-strategy.toml",
-        "contents": {
-          "compression": "",
-          "source": "data:;base64,W3VwZGF0ZXNdCnN0cmF0ZWd5ID0gInBlcmlvZGljIgpbW3VwZGF0ZXMucGVyaW9kaWMud2luZG93XV0KZGF5cyA9IFsgIlNhdCIsICJTdW4iIF0Kc3RhcnRfdGltZSA9ICIyMjozMCIKbGVuZ3RoX21pbnV0ZXMgPSA2MAo="
-        }
-      }
-    ],
-    "filesystems": [
-      {
-        "device": "/dev/disk/by-partlabel/boot",
-        "format": "ext4",
-        "label": "boot",
-        "path": "/boot"
-      },
-      {
-        "device": "/dev/disk/by-partlabel/root",
-        "format": "ext4",
-        "label": "root",
-        "path": "/"
-      }
-    ]
   }
 }
